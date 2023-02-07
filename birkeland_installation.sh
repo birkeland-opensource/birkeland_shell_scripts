@@ -94,6 +94,7 @@ echo "Installing Golang..."
 wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
 if [ $? -eq 0 ]; then
   tar -xvf go1.19.linux-amd64.tar.gz
+  rm -rf /usr/local/go
   sudo mv go /usr/local
 else
   echo "Error downloading Go binary"
