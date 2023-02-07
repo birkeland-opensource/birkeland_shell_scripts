@@ -106,5 +106,5 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
 
 source ~/.bashrc
-go --version
+go version
 echo "Go installed successfully"
