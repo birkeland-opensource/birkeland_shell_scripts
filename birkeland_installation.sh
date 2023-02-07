@@ -108,3 +108,8 @@ echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 go version
 echo "Go installed successfully"
+
+ufw allow 22
+ufw allow 9990
+ufw enable
+ufw reload
