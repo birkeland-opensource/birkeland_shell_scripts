@@ -98,3 +98,5 @@ then
   mv go /usr/local
   echo 'export GOPATH=$HOME/go' >> ~/.bashrc
   echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bash
+
+fi
