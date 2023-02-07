@@ -110,6 +110,6 @@ go version
 echo "Go installed successfully"
 
 ufw allow 22
-ufw allow 9990
+ufw allow 9990/tcp
 ufw enable
 ufw reload
