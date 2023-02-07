@@ -89,14 +89,25 @@ fi
 
 cd ~ || exit
 
-echo "Installing golang...."
+echo "Installing Golang..."
 
 wget https://dl.google.com/go/go1.19.linux-amd64.tar.gz
-if [ $? -eq 0 ]
-then
+if [ $? -eq 0 ]; then
   tar -xvf go1.19.linux-amd64.tar.gz
-  mv go /usr/local
-  echo 'export GOPATH=$HOME/go' >> ~/.bashrc
-  echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bash
+  sudo mv go /usr/local
+else
+  echo "Error downloading Go binary"
+  exit 1
+fi
 
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.bashrc
+
+source ~/.bashrc
+
+if command -v go &> /dev/null; then
+  echo "Go installed successfully"
+else
+  echo "Go installation failed"
+  exit 1
 fi
