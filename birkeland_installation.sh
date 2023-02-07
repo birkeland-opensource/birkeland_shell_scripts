@@ -70,7 +70,7 @@ then
   cd birkeland_lnd_grpc && npm i
   if [ $? -eq 0 ]
   then
-    cd birkeland_lnd_grpc pm2 start index.js
+    pm2 start /root/birkeland/birkeland_lnd_grpc/index.js
     if [ $? -eq 0 ]
     then
       echo "Done Installing birkleand backend app"
