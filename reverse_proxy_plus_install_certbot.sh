@@ -51,7 +51,7 @@ sudo ufw delete allow 'Nginx HTTP'
 sudo ufw status
 
 # Obtain SSL certificate using Certbot and the Nginx plugin
-sudo certbot --nginx -n --agree-tos --redirect -d $domain_name -d www.$domain_name -m $email_address
+sudo certbot --nginx -n --agree-tos --redirect -d $domain_name -m $email_address
 
 # Restart Nginx to apply SSL certificate
 sudo service nginx restart
