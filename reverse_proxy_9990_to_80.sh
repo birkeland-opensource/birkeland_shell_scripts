@@ -4,7 +4,8 @@
 cat > /etc/nginx/sites-available/default << EOL
 server {
     listen 80;
-
+    server_name autocodegenbackend.xperts.pro;
+    
     location / {
         proxy_pass http://localhost:9990;
         proxy_http_version 1.1;
