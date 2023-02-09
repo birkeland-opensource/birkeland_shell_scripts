@@ -4,7 +4,6 @@
 cat > /etc/nginx/sites-available/default << EOL
 server {
     listen 80;
-    server_name $1;
 
     location / {
         proxy_pass http://localhost:9990;
