@@ -19,16 +19,3 @@ EOL
 
 # Restart Nginx to apply changes
 sudo service nginx restart
-
-
-sudo apt -y install certbot python3-certbot-nginx
-
-# Step 3
-sudo ufw status
-sudo ufw allow 'Nginx Full'
-sudo ufw delete allow 'Nginx HTTP'
-sudo ufw status
-
-sudo certbot --nginx -n   --agree-tos  --redirect  -d $1 -d www.$1 -m $2
-
-sudo service nginx restart
