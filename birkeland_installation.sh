@@ -154,7 +154,6 @@ export BDB_PREFIX='/root/code/bitcoin/db4'
 cd ~/code/bitcoin && ./configure BDB_LIBS="-L\${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I\${BDB_PREFIX}/include" 
 cd ~/code/bitcoin && make 
 sudo make install 
-bitcoind --daemon 
 echo "ending bitcoin installation"
 
 echo "starting to install lnd"
@@ -254,6 +253,8 @@ sudo service mongodb status
 
 
 echo "End Start installing mongodb"
+
+bitcoind --daemon 
 
 ufw allow 22
 ufw allow 9990/tcp
