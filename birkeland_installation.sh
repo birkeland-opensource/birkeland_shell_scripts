@@ -98,15 +98,15 @@ then
       echo "Done Installing birkleand backend app"
     else
       echo "Error starting birkleand backend app"
-      exit 1
+    
     fi
   else
     echo "Error installing birkleand backend app dependencies"
-    exit 1
+    
   fi
 else
   echo "Error cloning birkleand backend app repository"
-  exit 1
+ 
 fi
 
 cd ~ || exit
