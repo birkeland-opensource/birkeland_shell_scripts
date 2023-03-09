@@ -223,6 +223,7 @@ rpclisten=0.0.0.0:10009
 #address per line.
 # All ipv4 on port 9735:
 listen=0.0.0.0:9735
+listen=[::1]:9736
 EOL
 
 # Give the user confirmation that the script has finished running
@@ -258,6 +259,8 @@ bitcoind --daemon
 
 ufw allow 22
 ufw allow 9990/tcp
+sudo ufw allow 9735/tcp
+sudo ufw allow 9736/tcp
 ufw enable
 ufw reload
 
