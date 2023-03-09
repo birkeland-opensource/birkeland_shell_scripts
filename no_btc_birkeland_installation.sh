@@ -86,13 +86,13 @@ echo "Installing birkleand backend app"
 mkdir -p birkeland 
 cd birkeland || exit
 
-git clone https://github.com/rubansundararaj/birkeland_lnd_grpc
+git clone https://github.com/birkeland-opensource/birkeland_lnd_backend
 if [ $? -eq 0 ]
 then
-  cd birkeland_lnd_grpc && npm i
+  cd birkeland_lnd_backend && npm i
   if [ $? -eq 0 ]
   then
-    pm2 start /root/birkeland/birkeland_lnd_grpc/index.js
+    pm2 start /root/birkeland/birkeland_lnd_backend/index.js
     if [ $? -eq 0 ]
     then
       echo "Done Installing birkleand backend app"
