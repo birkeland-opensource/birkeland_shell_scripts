@@ -14,6 +14,7 @@ sudo systemctl disable mongod
 echo "Removing MongoDB packages..."
 sudo apt-get purge -y mongodb-org*
 
+
 # Remove the MongoDB data directory
 echo "Removing MongoDB data directory..."
 sudo rm -r /data/db
