@@ -40,16 +40,20 @@ sudo mkdir -p /data/db
 echo "Changing ownership of the data directory..."
 sudo chown -R mongodb:mongodb /data/db
 
+# Unmask the MongoDB service
+echo "Unmasking MongoDB service..."
+sudo systemctl unmask mongod
+
 # Start MongoDB service
 echo "Starting MongoDB service..."
-sudo systemctl start mongodb
+sudo systemctl start mongod
 
 # Enable MongoDB service to start on boot
 echo "Enabling MongoDB service to start on boot..."
-sudo systemctl enable mongodb
+sudo systemctl enable mongod
 
 # Verify the MongoDB service status
 echo "Checking MongoDB service status..."
-sudo systemctl status mongodb
+sudo systemctl status mongod
 
 echo "End of MongoDB installation"
