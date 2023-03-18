@@ -42,14 +42,14 @@ sudo chown -R mongodb:mongodb /data/db
 
 # Start MongoDB service
 echo "Starting MongoDB service..."
-sudo systemctl start mongod
+sudo systemctl start mongodb
 
 # Enable MongoDB service to start on boot
 echo "Enabling MongoDB service to start on boot..."
-sudo systemctl enable mongod
+sudo systemctl enable mongodb
 
 # Verify the MongoDB service status
 echo "Checking MongoDB service status..."
-sudo systemctl status mongod
+sudo systemctl status mongodb
 
 echo "End of MongoDB installation"
