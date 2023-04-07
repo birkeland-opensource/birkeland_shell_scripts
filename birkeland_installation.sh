@@ -43,6 +43,10 @@ sudo service nginx restart
 
 echo "end of port forwarding 80 to 9990"
 
+# Install Tor
+sudo apt-get update
+sudo apt-get install -y tor
+
 echo "Installing nodejs..."
 curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 if [ $? -eq 0 ]
@@ -161,7 +165,7 @@ mkdir -p ~/birkeland/code
 cd ~/birkeland/code && rm -rf lnd_code
 mkdir -p lnd_code && cd lnd_code
 git clone https://github.com/lightningnetwork/lnd
-cd lnd && git checkout tags/v0.15.5-beta -b tags/v0.15.5-beta
+cd lnd && git checkout v0.16.0-beta
 make install
 
 echo "ending lnd installation"
@@ -224,6 +228,15 @@ rpclisten=0.0.0.0:10009
 # All ipv4 on port 9735:
 listen=0.0.0.0:9735
 listen=[::1]:9736
+
+tor.active=0
+tor.v3=0
+tor.streamisolation=0
+tor.control=9051
+tor.socks=9050
+
+wtclient.active=true
+
 EOL
 
 # Give the user confirmation that the script has finished running
@@ -257,6 +270,7 @@ echo "End Start installing mongodb"
 
 bitcoind --daemon 
 
+ufw allow 9911 comment "watchtower”
 ufw allow 22
 ufw allow 9990/tcp
 sudo ufw allow 9735/tcp
