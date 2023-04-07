@@ -270,7 +270,7 @@ echo "End Start installing mongodb"
 
 bitcoind --daemon 
 
-ufw allow 9911 comment "watchtower”
+ufw allow 9911
 ufw allow 22
 ufw allow 9990/tcp
 sudo ufw allow 9735/tcp
