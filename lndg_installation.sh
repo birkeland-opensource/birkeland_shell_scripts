@@ -38,10 +38,7 @@ echo "The password can be found in the 'data/lndg-admin.txt' file."
 python jobs.py
 
 # Run the server via a python development server
-# echo "Starting the development server on 0.0.0.0:8889"
-# python manage.py runserver 0.0.0.0:8889
+echo "Starting the development server on 0.0.0.0:8889"
+python manage.py runserver 0.0.0.0:8889
 
 
-.venv/bin/python initialize.py -sd
-Install Supervisord .venv/bin/pip install supervisor
-Start Supervisord supervisord
